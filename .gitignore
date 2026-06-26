@@ -1,0 +1,23 @@
+# Data
+/Data/
+/clustering_results/
+
+# Environments
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+.DS_Store
