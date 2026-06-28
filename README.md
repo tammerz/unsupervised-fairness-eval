@@ -29,8 +29,6 @@ Real estate algorithms can inadvertently perpetuate bias through **proxy leakage
 │   # Example scripts and notebooks
 ├── 📂 sanitychecks
 │   # Notebooks for analysis and visualization
-├── 📂 webapp
-│   # Web application components
 ├── 📄 main.py
 ├── 📄 setup.py
 ├── 📄 requirements.txt
