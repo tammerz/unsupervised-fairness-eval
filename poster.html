@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260629-05-f19f4d2"}');</script><script src="/_sdk/e4192b04afde3ce7.telemetry_sdk.js" integrity="sha512-4eZpyKBd3YJnsIPrIpaBqo7QT5UZ6+KSFXkSu1IQiB7jKM8y67ChRhZ5Yh6JfuOJCbPdISiNcS6nLKZzIMG1uQ=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Poster - AVM Fairness</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async=""></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600;700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1e2a4a;
+      --accent-blue: #2563eb;
+      --accent-green: #047857;
+      --accent-red: #b91c1c;
+      --text-primary: #1a1a2e;
+      --text-secondary: #4a5568;
+      --border-light: #e8e8e4;
+    }
+    body { margin:0; font-family:'Source Serif Pro',Georgia,serif; color:var(--text-primary); }
+    .poster-wrap { width:100%; min-height:calc(100 * min(var(--vh,1vh),1vh)); display:flex; flex-direction:column; }
+    .banner { background:linear-gradient(135deg,#1e2a4a,#2d3a5c); color:#fff; padding:1.5% 3%; display:flex; align-items:center; justify-content:space-between; border-bottom:4px solid var(--accent-blue); flex-shrink:0; }
+    .banner-title { font-family:'DM Sans',sans-serif; font-size:clamp(16px,2.2vw,28pt); font-weight:700; line-height:1.15; letter-spacing:-0.02em; margin-bottom:0.3em; }
+    .banner-subtitle { font-family:'DM Sans',sans-serif; font-size:clamp(9px,1vw,12pt); color:#c8d0e0; }
+    .logo-box { width:80px; height:80px; flex-shrink:0; margin-left:2%; }
+    .logo-box img { width:100%; height:100%; object-fit:contain; }
+
+    .grid-content { flex:1; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto 1fr 1fr; gap:12px; padding:1.5% 2.5%; min-height:0; }
+    .box { background:#fff; border:1px solid var(--border-light); border-radius:8px; padding:14px 16px; display:flex; flex-direction:column; overflow:hidden; min-height:0; }
+    .box:nth-child(1) { background:#f8faff; border-left:6px solid #2563eb; }
+    .box:nth-child(2) { background:#f0fdf4; border-left:6px solid #047857; }
+    .box:nth-child(3) { background:#fef3c7; border-left:6px solid #d97706; }
+    .box:nth-child(4) { background:#fef2f2; border-left:6px solid #b91c1c; }
+    .box:nth-child(5) { background:#f5f3ff; border-left:6px solid #7c3aed; }
+    .box:nth-child(6) { background:#faf5ff; border-left:6px solid #d946ef; }
+    .box-header { font-family:'DM Sans',sans-serif; font-size:clamp(12px,1.3vw,16pt); font-weight:700; color:var(--navy); margin-bottom:6px; padding:4px 10px; background:linear-gradient(90deg,#f0f4ff,transparent); border-left:4px solid var(--accent-blue); border-radius:0 4px 4px 0; flex-shrink:0; }
+    .sub-title { font-family:'DM Sans',sans-serif; font-size:clamp(11px,1.1vw,14pt); font-weight:600; color:var(--navy); margin:8px 0 4px; border-bottom:1px solid var(--border-light); padding-bottom:3px; }
+    .text-content { font-size:clamp(11px,1.35vw,15pt); line-height:1.6; color:var(--text-secondary); }
+    .bullet-list { margin:0; padding-left:14px; }
+    .bullet-list li { margin-bottom:2px; }
+    .bullet-list li::marker { color:var(--accent-blue); }
+    .highlight-blue { color:var(--accent-blue); font-weight:600; }
+    .highlight-red { color:var(--accent-red); font-weight:600; }
+    .highlight-green { color:var(--accent-green); font-weight:600; }
+
+    .img-full { display:flex; flex-direction:column; gap:6px; overflow:hidden; width:fit-content; max-width:100%; justify-self:start; }
+    .img-full img { width:auto; height:auto; max-height:300px; max-width:100%; object-fit:contain; border:1px solid var(--border-light); border-radius:6px; background:#fff; display:block; }
+    .img-caption { font-size:clamp(10px,1vw,11pt); color:#6b7280; border-left:3px solid #d1d5db; padding-left:8px; font-style:italic; flex-shrink:0; }
+
+    .takeaway-green { background:#f0fdf4; border-left:4px solid #10b981; padding:8px 10px; border-radius:0 6px 6px 0; margin-bottom:6px; }
+    .takeaway-red { background:#fef2f2; border-left:4px solid #ef4444; padding:8px 10px; border-radius:0 6px 6px 0; margin-bottom:6px; }
+
+    .qr-row { display:flex; align-items:center; gap:10px; background:#f7f8fc; padding:8px 10px; border-radius:6px; border:1px solid var(--border-light); margin-top:auto; }
+    .qr-row img { width:70px; height:70px; object-fit:contain; border-radius:4px; border:1px solid #d1d5db; background:#fff; padding:3px; }
+
+    @media(max-width:768px){ .grid-content { grid-template-columns:1fr; grid-template-rows:auto; } }
+  </style>
+  <script src="/_sdk/222d5a595d1ea7ba.editing_sdk.js" integrity="sha512-+eUQhAMYoBwLPVWl3qwUfHhQeNM4ejU4XowINDMcqsaOwqt9uw0YaoGtGcOm1aWn4O0sfUcOk3TSof/bgT1OKQ=="></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/48bf7c4c70d0d03c.data_sdk.js" type="text/javascript" integrity="sha512-e/yrQJz+prdXXt4yUvxXhl1WBGu3BRkP8X0fipGXI5gqiFClI7wI6K3TQnD7d63vx+BVhwzIvY6r8OrpX7lXJA=="></script>
+  <script src="/_sdk/5d8c692e132d2125.resizing_sdk.js" type="text/javascript" integrity="sha512-/Du3Fqe12kKsCd3BrbaNQEPtMxQi9S5hbJhnTf09AAilpqYsGa4N0rnimSX1Ui4dwNElKlen6VlI+E1n/NEfrA=="></script>
+ </head>
+ <body>
+  <div class="poster-wrap" data-template-id="__page-root" style="background: rgb(255, 255, 255);">
+   <header class="banner">
+    <div style="flex:1;padding-right:2%">
+     <div class="banner-title">
+      Auditing Automated Valuation Model Fairness Via Socioeconomic &amp; Geographic Clustering
+     </div>
+     <div class="banner-subtitle">
+      Authors: Tamara Muñoz Jordá &nbsp;|&nbsp; Supervisors: E. Beauxis Aussalet, M. Slokom<br>
+       Vrije Universiteit Amsterdam
+     </div>
+    </div>
+    <div class="logo-box">
+     <img data-template-id="vu-logo" class="canva-image" loading="lazy" src="sanitychecks/VU_social_avatar_blauw.svg" alt="Vrije Universiteit Amsterdam Logo">
+    </div>
+   </header>
+   <div class="grid-content"><!-- Box 1: Problem & Methodology -->
+    <div class="box">
+     <div class="box-header">
+      1. Problem &amp; Methodology
+     </div>
+     <div class="sub-title">
+      Problem
+     </div>
+     <ul class="bullet-list text-content">
+      <li><span class="highlight-red">Automated Valuation Models (AVMs)</span> risk systematically misvaluing neighbourhoods.</li>
+      <li>Post-deployment audits face constraints from opaque <span class="highlight-red">"black-box" models</span>.</li>
+      <li>Privacy laws restrict access to sensitive <span class="highlight-blue">demographic data</span>.</li>
+     </ul>
+     <div class="sub-title">
+      Solution &amp; Data
+     </div>
+     <ul class="bullet-list text-content">
+      <li>Applied unsupervised <span class="highlight-blue">Clustering for Fairness (C4F)</span> framework.</li>
+      <li>Analysed <span class="highlight-blue">38,878 residential properties</span> in Los Angeles County.</li>
+      <li>Merged Zillow transaction errors with Census <span class="highlight-blue">Area Deprivation Index (ADI)</span>.</li>
+     </ul>
+     <div class="sub-title">
+      Approach
+     </div>
+     <ul class="bullet-list text-content">
+      <li><span class="highlight-blue">K-Medoids spatial clustering</span> with Gower distance metric.</li>
+      <li><span class="highlight-red">ADI feature weight of 2.0</span> to enforce dimensional parity.</li>
+     </ul>
+    </div><!-- Box 2: Pipeline Figure -->
+    <div class="box">
+     <div class="box-header">
+      2. Data Pipeline
+     </div>
+     <div class="img-full"><img data-template-id="fig-1-pipeline" class="canva-image" loading="lazy" src="sanitychecks/data_pipeline_diagram.svg" alt="Data Integration Pipeline showing workflow architecture">
+      <div class="img-caption">
+       Fig. 1: Workflow architecture linking 38,878 Zillow transactions to Census Block Group deprivation ranks.
+      </div>
+     </div>
+    </div><!-- Box 3: Finding 1 + U-shaped -->
+    <div class="box">
+     <div class="box-header">
+      3. Finding 1: U-Shaped Bias Curve
+     </div>
+     <ul class="bullet-list text-content" style="margin-bottom:6px">
+      <li>Absolute predictive error <span class="highlight-red">peaks at both wealth extremes</span>.</li>
+      <li>Isolated socioeconomic dimensions reveal a <span class="highlight-red">U-shaped inaccuracy pattern</span>.</li>
+     </ul>
+     <div class="img-full"><img data-template-id="fig-5a-ushaped" class="canva-image" loading="lazy" src="sanitychecks/regressivity_decile_plot.svg" alt="U-Shaped curve showing valuation error across wealth spectrum">
+      <div class="img-caption">
+       Fig. 5a: Valuation error magnitude (\(\text{|logerror|}\)) deteriorates at both ends of the wealth spectrum.
+      </div>
+     </div>
+    </div><!-- Box 4: Finding 2 + Diverging chart -->
+    <div class="box">
+     <div class="box-header">
+      4. Finding 2: Algorithmic Gentrification Blindspot
+     </div>
+     <ul class="bullet-list text-content" style="margin-bottom:6px">
+      <li>Over <span class="highlight-blue">93% of clusters</span> face systematic <span class="highlight-blue">overvaluation</span>.</li>
+      <li>Most acute <span class="highlight-red">undervaluation</span> concentrates in <span class="highlight-red">Cluster 9</span>.</li>
+     </ul>
+     <div class="img-full"><img data-template-id="fig-9-diverging" class="canva-image" loading="lazy" src="sanitychecks/diverging_directional_harm.svg" alt="Diverging bar chart showing valuation bias patterns">
+      <div class="img-caption">
+       Fig. 9: Opposite-signed assessment burden contrasting pervasive overvaluation against concentrated local undervaluation.
+      </div>
+     </div>
+    </div><!-- Box 5: Bubble map -->
+    <div class="box">
+     <div class="box-header">
+      5. Geographic Cluster Map
+     </div>
+     <div class="img-full"><img data-template-id="fig-6-bubble" class="canva-image" loading="lazy" src="sanitychecks/spatial_bubble_map.svg" alt="Geographic bubble map of K-Medoids clusters">
+      <div class="img-caption">
+       Fig. 6: Geographic projection of 28 K-Medoids clusters isolating systematic undervaluation in a vulnerable neighbourhood.
+      </div>
+     </div>
+    </div><!-- Box 6: Takeaway -->
+    <div class="box">
+     <div class="box-header" style="border-color:#10b981">
+      6. Takeaway &amp; Limitations
+     </div>
+     <div class="takeaway-green">
+      <ul class="bullet-list text-content">
+       <li>Aggregate absolute-error parity metrics obscure <span class="highlight-green">acute neighbourhood-level economic harm</span>.</li>
+       <li><span class="highlight-green">Unsupervised spatial auditing</span> empowers regulators to detect proxy leakage without protected demographic attributes.</li>
+      </ul>
+     </div>
+     <div class="sub-title" style="color:#dc2626;border-color:#dc2626">
+      Key Limitation
+     </div>
+     <div class="takeaway-red">
+      <ul class="bullet-list text-content">
+       <li>Area-level census proxies (ADI) assigned to individual properties risk <span class="highlight-red">ecological fallacy</span>.</li>
+      </ul>
+     </div>
+     <div class="qr-row"><img data-template-id="qr-code-image" class="canva-image" loading="lazy" src="sanitychecks/qr.svg" alt="QR code linking to GitHub repository">
+      <div class="text-content">
+       <div style="font-family:'DM Sans',sans-serif;font-weight:600;margin-bottom:3px;font-size:clamp(9px,0.9vw,11pt)">
+        Code &amp; Contact
+       </div><a href="https://github.com/tammerz/unsupervised-fairness-eval" target="_blank" rel="noopener noreferrer" style="color:var(--accent-blue);text-decoration:none;font-size:clamp(8px,0.8vw,9pt)">github.com/tammerz/unsupervised-fairness-eval</a><br><strong>Email:</strong> t.m.jorda@student.vu.nl
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1343f46306491f2',t:'MTc4MjcyODkzNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body></html>

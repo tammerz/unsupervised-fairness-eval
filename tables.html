@@ -1,0 +1,164 @@
+<div class="audit-comparison-container">
+    <h2>ALGORITHMIC TOPOGRAPHY: THE AUDITING PARADIGM COMPARISON</h2>
+
+    <table border="1" cellpadding="8" cellspacing="0"
+           style="border-collapse: collapse; width: 100%; text-align: center; font-family: sans-serif;">
+        <thead>
+        <tr style="background-color: #f3f4f6;">
+            <th colspan="4">The Auditing Paradigm Comparison</th>
+        </tr>
+        <tr style="background-color: #f3f4f6;">
+            <th>PARADIGM</th>
+            <th>REQUIRES WHITE-BOX ACCESS?</th>
+            <th>PRESERVES MARKET ACCURACY?</th>
+            <th>FEASIBLE FOR EXTERNAL REGULATORS?</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Adversarial Debiasing</td>
+            <td>&#10006; <strong>No</strong></td>
+            <td>&#10006; <strong>No</strong><br><small>(Destroys vital geographic pricing signals)</small></td>
+            <td>&#10004; <strong>Yes</strong></td>
+        </tr>
+        <tr>
+            <td>Counterfactual SCMs</td>
+            <td>&#10004; <strong>Yes</strong><br><small>(Requires proprietary neural weights)</small></td>
+            <td>&#10004; <strong>Yes</strong></td>
+            <td>&#10006; <strong>No</strong></td>
+        </tr>
+        <tr style="background-color: #d1d5db; font-weight: bold;">
+            <td>Unsupervised C4F<br><span style="font-weight: normal;">(Our Method)</span></td>
+            <td>&#10006; No<br><small style="font-weight: normal;">(Works on black-box outputs)</small></td>
+            <td>&#10004; Yes<br><small style="font-weight: normal;">(Post-hoc analysis leaves model intact)</small></td>
+            <td>&#10004; Yes</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div style="border: 1px solid #374151; margin-top: 16px; padding: 12px; font-family: sans-serif;">
+        <h4 style="margin: 0 0 8px 0; text-align: center; text-transform: uppercase;">Summary</h4>
+        <p style="margin: 0;">External regulators face a severe bottleneck: debiasing destroys economic accuracy, and
+            causal verification demands impossible white-box access. C4F offers a pragmatic governance compromise.</p>
+    </div>
+</div>
+
+
+
+<div class="extremes-profile-container" style="font-family: sans-serif; width: 100%; max-width: 850px;">
+  <h2 style="text-align: center; color: #2d3748; margin-bottom: 12px;">Profiling the Geographic Extremes</h2>
+
+  <table border="1" cellpadding="12" cellspacing="0" style="border-collapse: collapse; width: 100%; text-align: center; border: 1px solid #a0aec0;">
+    <thead>
+      <tr style="background-color: #f7fafc;">
+        <th colspan="2" style="font-size: 1.1em; padding: 10px; color: #1a202c;">The Extremes Matrix</th>
+      </tr>
+      <tr>
+        <th style="background-color: #c85a28; color: #ffffff; width: 50%; padding: 10px;">The Severely Overvalued Pockets (Orange)</th>
+        <th style="background-color: #5ba2c8; color: #ffffff; width: 50%; padding: 10px;">The Severely Undervalued Pockets (Sky Blue)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Cluster 0:</strong> ADI 4.5 | <strong>Mean Error</strong> +0.030</td>
+        <td><strong>Cluster 6:</strong> ADI 2.0 | <strong>Mean Error</strong> -0.005</td>
+      </tr>
+      <tr>
+        <td><strong>Cluster 24:</strong> ADI 7.8 | <strong>Mean Error</strong> +0.027</td>
+        <td><strong>Cluster 9:</strong> ADI 8.0 | <strong>Mean Error</strong> -0.015</td>
+      </tr>
+      <tr>
+        <td style="background-color: #fbe6d5; padding: 16px; vertical-align: top;">
+          <strong>Insight:</strong> Massive overvaluation is concentrated heavily in mid-to-high deprivation zones.
+        </td>
+        <td style="background-color: #dce8f3; padding: 16px; vertical-align: top;">
+          <strong>Insight:</strong> Undervaluation is hyper-localized, striking one affluent enclave and one highly socioeconomically deprived area with severe intensity.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="c4f-engine-container">
+    <h2>The Auditing Engine: Clustering for Fairness (C4F)</h2>
+
+    <table border="1" cellpadding="12" cellspacing="0"
+           style="border-collapse: collapse; width: 100%; text-align: center; border: 2px solid #5b6f82;">
+        <tbody>
+        <tr>
+            <td style="width: 33.33%; vertical-align: top; border: 2px solid #5b6f82;">
+                <div style="font-size: 1.8em; font-weight: normal; margin-bottom: 4px;">ERR</div>
+                <div style="margin-bottom: 12px;">Prediction Errors</div>
+                <div>Data: <strong>logerror</strong>.<br>Measures valuation accuracy.</div>
+            </td>
+            <td style="width: 33.33%; vertical-align: top; border: 2px solid #5b6f82;">
+                <div style="font-size: 1.8em; font-weight: normal; margin-bottom: 4px;">SEN</div>
+                <div style="margin-bottom: 12px;">Sensitive Features</div>
+                <div>Data: <strong>Area Deprivation Index (ADI)</strong>. A 1-to-10 scale ranking neighborhood
+                    vulnerability.
+                </div>
+            </td>
+            <td style="width: 33.33%; vertical-align: top; border: 2px solid #5b6f82;">
+                <div style="font-size: 1.8em; font-weight: normal; margin-bottom: 4px;">REG</div>
+                <div style="margin-bottom: 12px;">Regular Features</div>
+                <div>Data: <strong>Latitude / Longitude</strong>. The physical space.</div>
+            </td>
+        </tr>
+        <tr style="background-color: #dee5ed; text-align: left;">
+            <td colspan="1" style="border: 2px solid #5b6f82; border-right: 1px solid #9baab8; padding: 16px;">
+                Algorithm: <strong>K-Medoids</strong> (chosen for robustness against extreme geographic outliers
+                compared to K-Means).
+            </td>
+            <td colspan="2" style="border: 2px solid #5b6f82; border-left: none; padding: 16px;">
+                Distance Metric: <strong>Gower Distance</strong> (enables mixed-type computation across continuous
+                coordinates, ordinal ranks, and categorical indicators).
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="governance-implications-container">
+    <h2>Implications for Algorithmic Governance</h2>
+
+    <table border="1" cellpadding="16" cellspacing="0"
+           style="border-collapse: collapse; width: 100%; border: 1px solid #9baab8; font-family: sans-serif;">
+        <tbody>
+        <tr>
+            <td style="width: 10%; text-align: center; font-size: 2.5em; font-weight: bold; border-right: 1px solid #9baab8;">
+                1
+            </td>
+            <td style="width: 90%;">
+                <div style="font-size: 1.2em; font-weight: bold; margin-bottom: 6px;">Global Metrics Lie</div>
+                <div>Relying on absolute error parity or county-wide averages obscures severe directional harm. An AVM
+                    can mathematically satisfy fairness on paper while actively overcharging a low-income area and
+                    undercharging a neighboring one.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 10%; text-align: center; font-size: 2.5em; font-weight: bold; border-right: 1px solid #9baab8;">
+                2
+            </td>
+            <td style="width: 90%;">
+                <div style="font-size: 1.2em; font-weight: bold; margin-bottom: 6px;">Proxies are Viable Auditing
+                    Tools
+                </div>
+                <div>Unsupervised spatial clustering (C4F) successfully detects bias without requiring legally protected
+                    attributes. We can audit the black box from the outside.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 10%; text-align: center; font-size: 2.5em; font-weight: bold; border-right: 1px solid #9baab8;">
+                3
+            </td>
+            <td style="width: 90%;">
+                <div style="font-size: 1.2em; font-weight: bold; margin-bottom: 6px;">Post-Hoc Supervision Works</div>
+                <div>Regulators do not need invasive white-box access to proprietary neural weights. By enforcing
+                    dimensional parity between spatial coordinates and socioeconomic ranks, we can map algorithmic
+                    blindspots post-deployment.
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
